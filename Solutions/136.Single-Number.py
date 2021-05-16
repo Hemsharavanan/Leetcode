@@ -1,13 +1,11 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        numbersCount = {}
+        n = 0
         
         for num in nums:
-            numbersCount[num] = numbersCount.get(num, 0) + 1
-        
-        for num in nums:
-            if numbersCount[num] == 1:
-                return num
+            n = n ^ num
+            
+        return n
 
 
 """
